@@ -47,13 +47,6 @@ function Alert({ alerts = messages }: Props) {
           </button>
         </div>
         <div class="flex-1 flex justify-end mr-4">
-          <a
-            href="/atendimento"
-            class="uppercase text-xs flex flex-row items-center  mr-4"
-          >
-            <Icon name="QuestionMarkCircle" className="w-6 h-6 mr-2" />
-            Atendimento
-          </a>
           <a href="/login" class="uppercase text-xs flex flex-row items-center">
             <Icon name="User" className="w-5 h-5 mr-2" />
             Login/Cadastro
