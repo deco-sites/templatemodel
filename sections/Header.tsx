@@ -27,15 +27,15 @@ function Navbar() {
         <button aria-label="open menu" class="p-2">
           <Icon name="Bars3" className="w-8 h-8" />
         </button>
-        <a href="#" class="p-2" aria-label="search">
-          <Icon name="MagnifyingGlass" className="w-8 h-8" />
-        </a>
-        <a href="/" aria-label="home link" class="flex-grow">
-        </a>
-        <a href="#" class="p-2" aria-label="my account">
-          <Icon name="User" className="w-8 h-8" />
-        </a>
-        <Minicart />
+        <div class="flex">
+          <a href="#" class="p-2" aria-label="search">
+            <Icon name="MagnifyingGlass" className="w-8 h-8" />
+          </a>
+          <a href="#" class="p-2" aria-label="my account">
+            <Icon name="User" className="w-8 h-8" />
+          </a>
+          <Minicart />
+        </div>
       </section>
       <section class="hidden md:flex bg-white flex-row h-[80px] justify-between md:border-b border-[#d3d5db]">
         <div class="flex items-center justify-center flex-1 min-w-[200px]">
@@ -58,8 +58,8 @@ function Navbar() {
           <a href="#" class="mr-6">
             <Icon name="MagnifyingGlass" className="w-8 h-8" />
           </a>
-          <a href="#">
-            <Icon name="Heart" className="w-8 h-8" />
+          <a href="#" class="mr-6">
+            <Icon name="User" className="w-8 h-8" />
           </a>
           <Minicart />
         </div>

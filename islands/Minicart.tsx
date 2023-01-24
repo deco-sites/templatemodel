@@ -37,7 +37,7 @@ export default function Cart() {
     <div>
       <button
         onClick={() => modalRef.current!.showModal()}
-        class="h-full flex items-center gap-2 p-2"
+        class="h-full flex items-center gap-2"
         aria-label="open cart"
       >
         <Icon name="ShoppingCart" className="w-8 h-8" />
