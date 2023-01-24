@@ -35,7 +35,7 @@ export default function AddToCart({ skuId, sellerId, large }: Props) {
       onClick={onAddItem}
       loading={loading}
     >
-      Adicionar à Sacola
+      Adicionar ao carrinho
     </Button>
   );
 }
