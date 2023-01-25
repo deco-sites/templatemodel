@@ -34,7 +34,9 @@ function Navbar() {
           <a href="#" class="p-2" aria-label="my account">
             <Icon name="User" className="w-8 h-8" />
           </a>
-          <Minicart />
+          <div class="p-2">
+            <Minicart />
+          </div>
         </div>
       </section>
       <section class="hidden md:flex bg-white flex-row h-[80px] justify-between md:border-b border-[#d3d5db]">
