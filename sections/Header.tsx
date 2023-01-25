@@ -13,9 +13,11 @@ function NavItem({
   return (
     <a
       href={href ?? `/search?ft=${children}`}
-      class={`flex items-center text-[16px] font-bold uppercase px-8 lg:px-12 hover:border-black border-solid border-b border-white `}
+      class={`flex items-center text-[15px] px-8 lg:px-6`}
     >
-      {children}
+      <span class="hover:border-black border-solid border-b border-white">
+        {children}
+      </span>
     </a>
   );
 }
