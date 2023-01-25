@@ -1,19 +1,39 @@
 export const sections = [
   {
-    label: "Minha Conta",
+    label: "Sobre",
     content: (
       <div class="flex flex-col">
         <a
-          href="#"
+          target="_blank"
           class="mb-4 text-white text-xs"
+          rel="noopener noreferrer"
+          href="#"
         >
-          Login/Cadastro
+          Quem somos
         </a>
         <a
-          href="#"
+          target="_blank"
           class="mb-4 text-white text-xs"
+          rel="noopener noreferrer"
+          href="#"
         >
-          Meus pedidos
+          Privacidade e segurança
+        </a>
+        <a
+          target="_blank"
+          class="mb-4 text-white text-xs"
+          rel="noopener noreferrer"
+          href="#"
+        >
+          Termos de uso
+        </a>
+        <a
+          target="_blank"
+          class="mb-4 text-white text-xs"
+          rel="noopener noreferrer"
+          href="#"
+        >
+          Trabalhe Conosco
         </a>
       </div>
     ),
@@ -50,73 +70,20 @@ export const sections = [
     ),
   },
   {
-    label: "Sobre",
+    label: "Minha Conta",
     content: (
       <div class="flex flex-col">
         <a
-          target="_blank"
-          class="mb-4 text-white text-xs"
-          rel="noopener noreferrer"
           href="#"
-        >
-          Quem somos
-        </a>
-
-        <a
-          target="_blank"
           class="mb-4 text-white text-xs"
-          rel="noopener noreferrer"
-          href="#"
         >
-          Lojas
+          Login/Cadastro
         </a>
         <a
-          target="_blank"
-          class="mb-4 text-white text-xs"
-          rel="noopener noreferrer"
           href="#"
-        >
-          Trabalhe Conosco
-        </a>
-        <a
-          target="_blank"
           class="mb-4 text-white text-xs"
-          rel="noopener noreferrer"
-          href="#"
         >
-          Grupo Soma
-        </a>
-        <a
-          target="_blank"
-          class="mb-4 text-white text-xs"
-          rel="noopener noreferrer"
-          href="#"
-        >
-          Privacidade e segurança
-        </a>
-        <a
-          target="_blank"
-          class="mb-4 text-white text-xs"
-          rel="noopener noreferrer"
-          href="#"
-        >
-          Aviso de privacidade
-        </a>
-        <a
-          target="_blank"
-          class="mb-4 text-white text-xs"
-          rel="noopener noreferrer"
-          href="#"
-        >
-          Termos de uso
-        </a>
-        <a
-          target="_blank"
-          class="mb-4 text-white text-xs"
-          rel="noopener noreferrer"
-          href="#"
-        >
-          Mapa do Site
+          Meus pedidos
         </a>
       </div>
     ),
@@ -124,11 +91,11 @@ export const sections = [
   {
     label: "Formas de Pagamento",
     content: (
-      <div class="flex flex-col p-4">
-        <span class="text-white mb-4 text-white text-xs">
+      <div class="flex flex-col pb-4">
+        <div class="text-white mb-3 text-xs">
           Pagamento por Pix
-        </span>
-        <div class="flex justify-center">
+        </div>
+        <div class="mb-3">
           <img
             src="/assets/pix.svg"
             alt="Logotipo pix"
@@ -138,7 +105,9 @@ export const sections = [
             decoding="async"
           />
         </div>
-        <span class="text-white my-4 text-xs">Cartão de Crédito:</span>
+        <div class="text-white mt-3 text-xs">
+          Cartão de Crédito
+        </div>
         <ul class="flex flex-row flex-wrap justify-center lg:justify-start mt-1">
           <li class="w-8 h-8 flex items-center justify-center mr-[4px] mb-[4px] last:m-0">
             <img
@@ -195,44 +164,6 @@ export const sections = [
     ),
   },
   {
-    label: "Certificados",
-    content: (
-      <div>
-        <ul class="flex flex-row flex-wrap pb-6" style="margin-top: 8px;">
-          <li class="">
-            <a href="#" aria-label="certificado compromisso">
-              <img
-                data-src=""
-                src=""
-                alt=""
-                width="80"
-                height="80"
-                loading="lazy"
-                decoding="async"
-              />
-            </a>
-          </li>
-          <li style="display: inline-block; margin-left: 15px; margin-right: 15px; align-self: center;">
-            |
-          </li>
-          <li class="">
-            <a href="#" aria-label="certifiicado logo oficial">
-              <img
-                data-src=""
-                src=""
-                alt=""
-                width="80"
-                height="80"
-                loading="lazy"
-                decoding="async"
-              />
-            </a>
-          </li>
-        </ul>
-      </div>
-    ),
-  },
-  {
     label: "Redes Sociais",
     content: (
       <div>
@@ -279,12 +210,12 @@ export const sections = [
 
 function FooterAccordion() {
   return (
-    <div class="w-full">
+    <div class="w-full py-3 bg-[#353535]">
       {sections.map(({ label, content }) => (
-        <div class="bg-[#353535]" key={label}>
+        <div key={label}>
           <details class="w-full cursor-pointer flex flex-row justify-between focus:outline-none">
-            <summary class="text-white p-6">{label}</summary>
-            <div class="p-4 pt-4 pb-2 text-sm text-gray-100 bg-[#222]">
+            <summary class="text-white px-6 py-2">{label}</summary>
+            <div class="px-8 text-sm text-gray-100">
               {content}
             </div>
           </details>
