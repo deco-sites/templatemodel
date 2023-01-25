@@ -62,7 +62,7 @@ export default function ProductCard({
                 {name.replace(/(.*)(\-).*$/, "$1$2")}
               </div>
             )}
-            <div class="text-xs flex justify-between md:justify-start gap-2 mb-1">
+            <div class="text-xs flex justify-start gap-2 mb-1">
               {listPrice && (
                 <span class="text-gray-400 line-through">
                   R$ {listPrice.price.toFixed(2)}
