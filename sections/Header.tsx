@@ -29,7 +29,7 @@ function Navbar() {
             <Icon name="Bars3" className="w-8 h-8" />
           </button>
         </div>
-        <a href="/" class="block max-w-[12rem] p-3">
+        <a href="/" class="block min-w-[10rem] max-w-[12rem] p-3">
           <StoreLogo />
         </a>
         <div class="flex mt-2 w-24 justify-end">
@@ -45,7 +45,7 @@ function Navbar() {
         </div>
       </section>
       <section class="hidden md:flex bg-white flex-row h-[80px] items-center md:border-b border-[#d3d5db]">
-        <a href="/" class="block max-w-[14rem] p-3 ml-4">
+        <a href="/" class="block min-w-[12rem] max-w-[14rem] p-3 ml-4">
           <StoreLogo />
         </a>
         <div class="flex justify-center md:justify-between pl-12 h-14">
