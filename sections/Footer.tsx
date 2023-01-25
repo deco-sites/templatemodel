@@ -5,22 +5,12 @@ export default function Footer() {
     <footer class="w-full">
       <div class="hidden md:block bg-[#353535] w-full">
         <div class="flex justify-between p-8 w-9/12 mx-auto">
-          {sections.slice(0, 3).map(({ label, content }) => (
+          {sections.map(({ label, content }) => (
             <div class="flex flex-col mr-12">
               <span class="text-white uppercase mb-4 text-xs">{label}</span>
               {content}
             </div>
           ))}
-          <div class="flex-col">
-            {sections
-              .slice(3, sections.length - 1)
-              .map(({ label, content }) => (
-                <div class="flex flex-col mr-12">
-                  <span class="text-white uppercase mb-4 text-xs">{label}</span>
-                  {content}
-                </div>
-              ))}
-          </div>
         </div>
       </div>
 
