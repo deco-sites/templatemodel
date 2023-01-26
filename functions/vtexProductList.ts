@@ -33,7 +33,7 @@ const productListLoader: LoaderFunction<
   props,
 ) => {
   const count = props.count ?? 12;
-  const query = props.query || "";
+  const query = props.query ?? " ";
   const sort = props.sort || "";
   const loja = ctx.params.loja;
   const client = getSupabaseClient();

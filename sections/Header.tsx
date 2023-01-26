@@ -110,7 +110,7 @@ export interface Props {
 function Header({ alerts, scrapData }: Props) {
   const logos = JSON.parse(scrapData?.logos || "[]");
   const colors = JSON.parse(
-    scrapData?.colors || "[[255,255,255,1], [255,255,255,1]]",
+    scrapData?.colors || "[[53,53,53,1], [255,255,255,1]]",
   );
   return (
     <header>
