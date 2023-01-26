@@ -1,3 +1,5 @@
+import getSupabaseClient from "$live/supabase.ts";
+
 import { toProduct } from "$live/std/commerce/vtex/transform.ts";
 
 import type { Product } from "$live/std/commerce/types.ts";
@@ -10,22 +12,11 @@ import { Sort } from "$live/std/commerce/vtex/types.ts";
 
 export interface Props {
   /** @description query to use on search */
-  query: string;
+  query?: string;
+  /** @description sort strategy */
+  sort?: Sort;
   /** @description total number of items to display */
   count: number;
-  //* @enumNames ["relevance", "greater discount", "arrivals", "name asc", "name desc", "most ordered", "price asc", "price desc"]
-  /**
-   * @description search sort parameter
-   */
-  sort?:
-    | ""
-    | "price:desc"
-    | "price:asc"
-    | "orders:desc"
-    | "name:desc"
-    | "name:asc"
-    | "release:desc"
-    | "discount:desc";
 }
 
 /**
@@ -43,16 +34,25 @@ const productListLoader: LoaderFunction<
 ) => {
   const count = props.count ?? 12;
   const query = props.query || "";
-  const sort: Sort = props.sort || "";
+  const sort = props.sort || "";
+  const loja = ctx.params.loja;
+  const client = getSupabaseClient();
+
+  const data =
+    (await client.from("scrap").select().eq("domain", loja).single()).data;
+  const scrapDataVTEXConfig = data?.vtexconfig
+    ? JSON.parse(data.vtexconfig)
+    : {};
 
   const searchArgs = {
     query,
     page: 0,
-    count,
     sort,
+    count,
     ...(ctx.state.global.vtexconfig ?? defaultVTEXSettings),
+    ...scrapDataVTEXConfig,
   };
-
+  console.log(searchArgs);
   // search prodcuts on VTEX. Feel free to change any of these parameters
   const productsResult = await vtex.search.products(searchArgs);
   const { products: vtexProducts } = productsResult;

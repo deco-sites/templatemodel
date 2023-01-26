@@ -40,12 +40,13 @@ import * as $$$18 from "./sections/StoreFeatures.tsx";
 import * as $$$19 from "./sections/VideoCarousel.tsx";
 import * as $$$20 from "./sections/vtexconfig.global.tsx";
 import * as $$$$0 from "./functions/occProductDetailsPage.ts";
-import * as $$$$1 from "./functions/shopifyProductDetailsPage.ts";
-import * as $$$$2 from "./functions/shopifyProductList.ts";
-import * as $$$$3 from "./functions/shopifyProductListingPage.ts";
-import * as $$$$4 from "./functions/vtexProductDetailsPage.ts";
-import * as $$$$5 from "./functions/vtexProductList.ts";
-import * as $$$$6 from "./functions/vtexProductListingPage.ts";
+import * as $$$$1 from "./functions/scrapData.ts";
+import * as $$$$2 from "./functions/shopifyProductDetailsPage.ts";
+import * as $$$$3 from "./functions/shopifyProductList.ts";
+import * as $$$$4 from "./functions/shopifyProductListingPage.ts";
+import * as $$$$5 from "./functions/vtexProductDetailsPage.ts";
+import * as $$$$6 from "./functions/vtexProductList.ts";
+import * as $$$$7 from "./functions/vtexProductListingPage.ts";
 
 const manifest: DecoManifest = {
   routes: {
@@ -91,12 +92,13 @@ const manifest: DecoManifest = {
   },
   functions: {
     "./functions/occProductDetailsPage.ts": $$$$0,
-    "./functions/shopifyProductDetailsPage.ts": $$$$1,
-    "./functions/shopifyProductList.ts": $$$$2,
-    "./functions/shopifyProductListingPage.ts": $$$$3,
-    "./functions/vtexProductDetailsPage.ts": $$$$4,
-    "./functions/vtexProductList.ts": $$$$5,
-    "./functions/vtexProductListingPage.ts": $$$$6,
+    "./functions/scrapData.ts": $$$$1,
+    "./functions/shopifyProductDetailsPage.ts": $$$$2,
+    "./functions/shopifyProductList.ts": $$$$3,
+    "./functions/shopifyProductListingPage.ts": $$$$4,
+    "./functions/vtexProductDetailsPage.ts": $$$$5,
+    "./functions/vtexProductList.ts": $$$$6,
+    "./functions/vtexProductListingPage.ts": $$$$7,
   },
   schemas: {
     "./sections/Banner.tsx": {
@@ -163,6 +165,12 @@ const manifest: DecoManifest = {
               "null",
             ],
             "title": " C T A",
+          },
+          "scrapData": {
+            "$id": "00fb65a5ba75e7ebb9ee143b5dcdb62899d4e58f",
+            "format": "live-function",
+            "type": "string",
+            "title": "Scrap Data",
           },
         },
         "required": [
@@ -419,6 +427,12 @@ const manifest: DecoManifest = {
             ],
             "title": "Theme Color",
           },
+          "scrapData": {
+            "$id": "00fb65a5ba75e7ebb9ee143b5dcdb62899d4e58f",
+            "format": "live-function",
+            "type": "string",
+            "title": "Scrap Data",
+          },
         },
         "required": [
           "url",
@@ -437,6 +451,12 @@ const manifest: DecoManifest = {
               "type": "string",
             },
             "title": "Alerts",
+          },
+          "scrapData": {
+            "$id": "00fb65a5ba75e7ebb9ee143b5dcdb62899d4e58f",
+            "format": "live-function",
+            "type": "string",
+            "title": "Scrap Data",
           },
         },
         "required": [
@@ -778,6 +798,31 @@ const manifest: DecoManifest = {
         "additionalProperties": true,
       },
     },
+    "./functions/scrapData.ts": {
+      "inputSchema": {
+        "title": "Scrap Data",
+        "type": "object",
+        "properties": {
+          "null": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Null",
+          },
+        },
+        "required": [],
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "00fb65a5ba75e7ebb9ee143b5dcdb62899d4e58f",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
     "./functions/shopifyProductDetailsPage.ts": {
       "inputSchema": {
         "type": "null",
@@ -878,22 +923,16 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "query": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": "Query",
             "description": "query to use on search",
-          },
-          "count": {
-            "type": "number",
-            "title": "Count",
-            "description": "total number of items to display",
           },
           "sort": {
             "type": "string",
             "anyOf": [
-              {
-                "type": "string",
-                "const": "",
-              },
               {
                 "type": "string",
                 "const": "price:desc",
@@ -922,13 +961,21 @@ const manifest: DecoManifest = {
                 "type": "string",
                 "const": "discount:desc",
               },
+              {
+                "type": "string",
+                "const": "",
+              },
             ],
             "title": "Sort",
-            "description": "search sort parameter",
+            "description": "sort strategy",
+          },
+          "count": {
+            "type": "number",
+            "title": "Count",
+            "description": "total number of items to display",
           },
         },
         "required": [
-          "query",
           "count",
         ],
       },

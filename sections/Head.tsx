@@ -1,4 +1,6 @@
 import { asset, Head } from "$fresh/runtime.ts";
+import type { LoaderReturnType } from "$live/std/types.ts";
+import { scrapProps } from "../functions/scrapData.ts";
 
 export interface Props {
   title?: string;
@@ -8,6 +10,7 @@ export interface Props {
   faviconUrl?: string;
   styleUrls?: string[];
   themeColor?: string;
+  scrapData?: LoaderReturnType<scrapProps>;
 }
 
 export const initialProps: Props = {
@@ -21,6 +24,7 @@ export const initialProps: Props = {
 };
 
 export default function HeadComponent(props: Props) {
+  const mergedProps = { ...initialProps, ...props, ...props.scrapData };
   let {
     title,
     description,
@@ -29,7 +33,7 @@ export default function HeadComponent(props: Props) {
     faviconUrl,
     styleUrls,
     themeColor,
-  } = props?.title ? props : initialProps;
+  } = mergedProps;
   if (!imageUrl) {
     imageUrl = initialProps.imageUrl;
   }

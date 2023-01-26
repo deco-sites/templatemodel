@@ -1,4 +1,6 @@
 import Image from "$live/std/ui/components/Image.tsx";
+import type { LoaderReturnType } from "$live/std/types.ts";
+import { scrapProps } from "../functions/scrapData.ts";
 
 export type Props = {
   imgSrc: { mobile: string; desktop: string };
@@ -8,6 +10,7 @@ export type Props = {
   subtitle?: string;
   link?: string;
   CTA?: string;
+  scrapData?: LoaderReturnType<scrapProps>;
 };
 
 export const imgSrcDefault = {
@@ -18,8 +21,17 @@ export const imgSrcDefault = {
 };
 
 export default function Banner(
-  { imgSrc = imgSrcDefault, alt, text, title, subtitle, link, CTA }: Props,
+  { imgSrc = imgSrcDefault, alt, text, title, subtitle, link, CTA, scrapData }:
+    Props,
 ) {
+  imgSrc = {
+    mobile: scrapData?.banners
+      ? JSON.parse(scrapData?.banners)[0]
+      : imgSrc.mobile,
+    desktop: scrapData?.banners
+      ? JSON.parse(scrapData?.banners)[0]
+      : imgSrc.desktop,
+  };
   return (
     <section class="w-full mb-8">
       <div class="relative">

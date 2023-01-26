@@ -12,18 +12,25 @@ const messages = [
 
 export interface Props {
   alerts: string[];
+  alertColor: number[];
 }
 
-function Alert({ alerts = messages }: Props) {
+function Alert({ alerts = messages, alertColor }: Props) {
   const id = useId();
-
+  const color = alertColor
+    ? "bg-[rgba(" + alertColor.join(",") + ")]"
+    : "bg-[#353535]";
+  const textColor = alertColor &&
+      alertColor.reduce((partialSum, a) => partialSum + a, 0) / 3 < 128
+    ? "text-white"
+    : "text-black";
   return (
     <>
       <section
         id={id}
-        class="hidden md:flex flex-row w-full justify-between h-10 bg-[#353535]"
+        class={"hidden md:flex flex-row w-full justify-between h-10 " + color}
       >
-        <div class="flex gap-2 items-center text-sm text-white m-auto">
+        <div class={"flex gap-2 items-center text-sm m-auto " + textColor}>
           <div class="w-[500px] overflow-x-hidden">
             <div
               data-slider-content
