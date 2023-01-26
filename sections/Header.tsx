@@ -17,7 +17,7 @@ function NavItem({
       href={href ?? `/search?ft=${children}`}
       class={`flex items-center text-[15px] px-8 lg:px-6`}
     >
-      <span class="hover:border-black border-solid border-b border-white">
+      <span class="border-transparent border-b border-white hover:border-black hover:border-solid">
         {children}
       </span>
     </a>
