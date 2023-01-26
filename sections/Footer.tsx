@@ -55,7 +55,7 @@ export default function Footer() {
             </li>
             <li class="mr-[8px] last:m-0">
               <a
-                href="https://pin.it/4gYwKWW"
+                href="https://pin.it/"
                 class="flex items-center justify-center w-8 h-8"
                 target="_blank"
                 rel="noopener noreferrer"
