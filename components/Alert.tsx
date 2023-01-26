@@ -22,7 +22,7 @@ function Alert({ alerts = messages, alertColor }: Props) {
     ? "bg-[rgba(" + alertColor.join(",") + ")]"
     : "bg-[#353535]";
   const textColor = alertColor &&
-  isDarkLuminance(alertColor)
+      isDarkLuminance(alertColor)
     ? "text-white"
     : "text-black";
   return (
