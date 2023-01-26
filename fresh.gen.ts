@@ -39,14 +39,13 @@ import * as $$$17 from "./sections/Spacer.tsx";
 import * as $$$18 from "./sections/StoreFeatures.tsx";
 import * as $$$19 from "./sections/VideoCarousel.tsx";
 import * as $$$20 from "./sections/vtexconfig.global.tsx";
-import * as $$$$0 from "./functions/occProductDetailsPage.ts";
-import * as $$$$1 from "./functions/scrapData.ts";
-import * as $$$$2 from "./functions/shopifyProductDetailsPage.ts";
-import * as $$$$3 from "./functions/shopifyProductList.ts";
-import * as $$$$4 from "./functions/shopifyProductListingPage.ts";
-import * as $$$$5 from "./functions/vtexProductDetailsPage.ts";
-import * as $$$$6 from "./functions/vtexProductList.ts";
-import * as $$$$7 from "./functions/vtexProductListingPage.ts";
+import * as $$$$0 from "./functions/scrapData.ts";
+import * as $$$$1 from "./functions/shopifyProductDetailsPage.ts";
+import * as $$$$2 from "./functions/shopifyProductList.ts";
+import * as $$$$3 from "./functions/shopifyProductListingPage.ts";
+import * as $$$$4 from "./functions/vtexProductDetailsPage.ts";
+import * as $$$$5 from "./functions/vtexProductList.ts";
+import * as $$$$6 from "./functions/vtexProductListingPage.ts";
 
 const manifest: DecoManifest = {
   routes: {
@@ -91,14 +90,13 @@ const manifest: DecoManifest = {
     "./sections/vtexconfig.global.tsx": $$$20,
   },
   functions: {
-    "./functions/occProductDetailsPage.ts": $$$$0,
-    "./functions/scrapData.ts": $$$$1,
-    "./functions/shopifyProductDetailsPage.ts": $$$$2,
-    "./functions/shopifyProductList.ts": $$$$3,
-    "./functions/shopifyProductListingPage.ts": $$$$4,
-    "./functions/vtexProductDetailsPage.ts": $$$$5,
-    "./functions/vtexProductList.ts": $$$$6,
-    "./functions/vtexProductListingPage.ts": $$$$7,
+    "./functions/scrapData.ts": $$$$0,
+    "./functions/shopifyProductDetailsPage.ts": $$$$1,
+    "./functions/shopifyProductList.ts": $$$$2,
+    "./functions/shopifyProductListingPage.ts": $$$$3,
+    "./functions/vtexProductDetailsPage.ts": $$$$4,
+    "./functions/vtexProductList.ts": $$$$5,
+    "./functions/vtexProductListingPage.ts": $$$$6,
   },
   schemas: {
     "./sections/Banner.tsx": {
@@ -782,21 +780,6 @@ const manifest: DecoManifest = {
         ],
       },
       "outputSchema": null,
-    },
-    "./functions/occProductDetailsPage.ts": {
-      "inputSchema": {
-        "type": "null",
-        "title": "Occ Product Details Page",
-      },
-      "outputSchema": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "$id": "85d77d809b0be6ec54dbe06b714da53af53b54db",
-          },
-        },
-        "additionalProperties": true,
-      },
     },
     "./functions/scrapData.ts": {
       "inputSchema": {
