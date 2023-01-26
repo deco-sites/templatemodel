@@ -2,6 +2,7 @@ import { useId } from "preact/hooks";
 import Icon from "$components/ui/Icon.tsx";
 
 import Slider from "../islands/Slider.tsx";
+import { isDarkLuminance } from "../utils/color.ts";
 
 const messages = [
   "Parcelamento em até 10x no cartão",
@@ -21,7 +22,7 @@ function Alert({ alerts = messages, alertColor }: Props) {
     ? "bg-[rgba(" + alertColor.join(",") + ")]"
     : "bg-[#353535]";
   const textColor = alertColor &&
-      alertColor.reduce((partialSum, a) => partialSum + a, 0) / 3 < 128
+  isDarkLuminance(alertColor)
     ? "text-white"
     : "text-black";
   return (

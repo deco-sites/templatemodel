@@ -5,6 +5,7 @@ import type { LoaderReturnType } from "$live/std/types.ts";
 import { scrapProps } from "../functions/scrapData.ts";
 
 import Minicart from "../islands/Minicart.tsx";
+import { isLightLuminance } from "../utils/color.ts";
 
 function NavItem({
   href,
@@ -40,9 +41,9 @@ function Navbar(props: { logos: Array<string>; navColor: [255, 255, 255, 1] }) {
     : "bg-white";
   //const textColor = props.navColor ? "text-[rgba(" + props.navColor.map((x) => 255 ^ x).join(",") + ")]" : "text-black";
   const textColor = props.navColor &&
-      (props.navColor.reduce((partialSum, a) => partialSum + a, 0) / 3 < 128)
-    ? "text-white"
-    : "text-black";
+      (isLightLuminance(props.navColor))
+    ? "text-black"
+    : "text-white";
   return (
     <div class={textColor}>
       <section
