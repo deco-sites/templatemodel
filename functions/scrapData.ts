@@ -8,6 +8,7 @@ export type scrapProps = {
   logos: string;
   colors: string;
   banners: string;
+  favicon?: string;
 };
 
 /**

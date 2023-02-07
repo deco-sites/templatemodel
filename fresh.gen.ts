@@ -167,7 +167,7 @@ const manifest: DecoManifest = {
             "title": " C T A",
           },
           "scrapData": {
-            "$id": "00fb65a5ba75e7ebb9ee143b5dcdb62899d4e58f",
+            "$id": "69b1bac921b81ebb8c5f286ddbeb288c0439cf3f",
             "format": "live-function",
             "type": "string",
             "title": "Scrap Data",
@@ -428,7 +428,7 @@ const manifest: DecoManifest = {
             "title": "Theme Color",
           },
           "scrapData": {
-            "$id": "00fb65a5ba75e7ebb9ee143b5dcdb62899d4e58f",
+            "$id": "69b1bac921b81ebb8c5f286ddbeb288c0439cf3f",
             "format": "live-function",
             "type": "string",
             "title": "Scrap Data",
@@ -453,7 +453,7 @@ const manifest: DecoManifest = {
             "title": "Alerts",
           },
           "scrapData": {
-            "$id": "00fb65a5ba75e7ebb9ee143b5dcdb62899d4e58f",
+            "$id": "69b1bac921b81ebb8c5f286ddbeb288c0439cf3f",
             "format": "live-function",
             "type": "string",
             "title": "Scrap Data",
@@ -845,7 +845,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "00fb65a5ba75e7ebb9ee143b5dcdb62899d4e58f",
+            "$id": "69b1bac921b81ebb8c5f286ddbeb288c0439cf3f",
           },
         },
         "additionalProperties": true,
