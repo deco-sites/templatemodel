@@ -5,10 +5,11 @@ export type voidProps = {
   null?: string;
 };
 export type scrapProps = {
-  logos: string;
-  colors: string;
-  banners: string;
+  logos: string[];
+  colors: number[][];
+  banners: string[];
   favicon?: string;
+  categories: string[];
 };
 
 /**
@@ -24,8 +25,15 @@ const scrapLoader: LoaderFunction<voidProps, scrapProps> = async (
 
   const data =
     (await client.from("scrap").select().eq("domain", loja).single()).data;
+
   return {
-    data,
+    data: {
+      ...data,
+      logos: data.logos ? JSON.parse(data.logos) : [],
+      colors: data.colors ? JSON.parse(data.colors) : [],
+      banners: data.banners ? JSON.parse(data.banners) : [],
+      categories: data.categories ? JSON.parse(data.categories) : [],
+    },
   };
 };
 

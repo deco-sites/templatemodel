@@ -15,7 +15,7 @@ function NavItem({
   return (
     <a
       href={href ?? `/search?ft=${children}`}
-      class={`flex items-center text-[15px] px-8 lg:px-6`}
+      class={`flex items-center text-[15px] px-8 lg:px-6 capitalize`}
     >
       <span class="border-transparent border-b border-white hover:border-black hover:border-solid">
         {children}
@@ -35,7 +35,9 @@ function StoreLogo(props: { logos: Array<string> }) {
   return <span>SITE</span>;
 }
 
-function Navbar(props: { logos: Array<string>; navColor: [255, 255, 255, 1] }) {
+function Navbar(
+  props: { logos: Array<string>; navColor: number[]; categories?: string[] },
+) {
   const color = props.navColor
     ? "bg-[rgba(" + props.navColor.join(",") + ")]"
     : "bg-white";
@@ -77,16 +79,28 @@ function Navbar(props: { logos: Array<string>; navColor: [255, 255, 255, 1] }) {
           <StoreLogo logos={props.logos} />
         </a>
         <div class="flex justify-center md:justify-between pl-12 h-14">
-          <NavItem href="/farm">Marcas</NavItem>
-          <NavItem href="/search?trade-policy=1&filter.departamento=feminino">
-            Feminino
-          </NavItem>
-          <NavItem href="/search?trade-policy=1&filter.departamento=masculino">
-            Masculino
-          </NavItem>
-          <NavItem href="/search?trade-policy=1&filter.departamento=infantil">
-            Infantil
-          </NavItem>
+          {props.categories &&
+            (props.categories.slice(5).map((category) => (
+              <NavItem
+                href={`/search?trade-policy=1&filter.departamento=${category.toLowerCase()}`}
+              >
+                {category.toLowerCase()}
+              </NavItem>
+            )))}
+          {!props.categories && (
+            <>
+              <NavItem href="#">Marcas</NavItem>
+              <NavItem href="/search?trade-policy=1&filter.departamento=feminino">
+                Feminino
+              </NavItem>
+              <NavItem href="/search?trade-policy=1&filter.departamento=masculino">
+                Masculino
+              </NavItem>
+              <NavItem href="/search?trade-policy=1&filter.departamento=infantil">
+                Infantil
+              </NavItem>
+            </>
+          )}
         </div>
         <div class="flex-1 flex items-center justify-end md:mr-8">
           <a href="#" class="mr-6">
@@ -108,14 +122,18 @@ export interface Props {
 }
 
 function Header({ alerts, scrapData }: Props) {
-  const logos = JSON.parse(scrapData?.logos || "[]");
-  const colors = JSON.parse(
-    scrapData?.colors || "[[53,53,53,1], [255,255,255,1]]",
-  );
+  const logos = scrapData?.logos ?? [];
+  const colors = scrapData && scrapData?.colors.length > 0
+    ? scrapData?.colors
+    : [[53, 53, 53, 1], [255, 255, 255, 1]];
+  const categories = scrapData && scrapData.categories.length > 0
+    ? scrapData.categories
+    : undefined;
+
   return (
     <header>
       <Alert alerts={alerts} alertColor={colors[0]} />
-      <Navbar logos={logos} navColor={colors[1]} />
+      <Navbar logos={logos} navColor={colors[1]} categories={categories} />
     </header>
   );
 }

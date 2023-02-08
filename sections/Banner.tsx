@@ -24,14 +24,13 @@ export default function Banner(
   { imgSrc = imgSrcDefault, alt, text, title, subtitle, link, CTA, scrapData }:
     Props,
 ) {
-  imgSrc = {
-    mobile: scrapData?.banners
-      ? JSON.parse(scrapData?.banners)[0]
-      : imgSrc.mobile,
-    desktop: scrapData?.banners
-      ? JSON.parse(scrapData?.banners)[0]
-      : imgSrc.desktop,
-  };
+  if (scrapData && scrapData.banners.length > 0) {
+    imgSrc = {
+      mobile: scrapData.banners[0],
+      desktop: scrapData.banners[0],
+    };
+  }
+
   return (
     <section class="w-full mb-8">
       <div class="relative">
