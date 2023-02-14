@@ -263,16 +263,50 @@ const manifest: DecoManifest = {
         "title": " Bannner Grid",
         "type": "object",
         "properties": {
-          "images": {
+          "title": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Title",
+          },
+          "itemsPerLine": {
+            "title": "Items Per Line",
+            "type": "object",
+            "properties": {
+              "mobile": {
+                "type": [
+                  "number",
+                  "null",
+                ],
+                "title": "Mobile",
+              },
+              "desktop": {
+                "type": [
+                  "number",
+                  "null",
+                ],
+                "title": "Desktop",
+              },
+            },
+            "required": [],
+            "description": "Default is 2 for mobile and all for desktop",
+          },
+          "banners": {
             "type": "array",
             "items": {
               "title": "Banner",
               "type": "object",
               "properties": {
-                "src": {
+                "srcMobile": {
                   "format": "image-uri",
                   "type": "string",
-                  "title": "Src",
+                  "title": "Src Mobile",
+                },
+                "srcDesktop": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Src Desktop",
                 },
                 "alt": {
                   "type": "string",
@@ -286,21 +320,17 @@ const manifest: DecoManifest = {
                 },
               },
               "required": [
-                "src",
+                "srcMobile",
                 "alt",
                 "href",
               ],
             },
-            "title": "Images",
-          },
-          "title": {
-            "type": "string",
-            "title": "Title",
+            "title": "Banners",
           },
         },
         "required": [
-          "images",
-          "title",
+          "itemsPerLine",
+          "banners",
         ],
       },
       "outputSchema": null,
