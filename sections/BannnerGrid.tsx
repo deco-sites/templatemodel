@@ -68,6 +68,8 @@ export default function BannnerGrid({
                 sizes="(max-width: 640px) 100vw, 30vw"
                 src={srcMobile}
                 alt={alt}
+                decoding="async"
+                loading="lazy"
               />
             </picture>
           </a>
