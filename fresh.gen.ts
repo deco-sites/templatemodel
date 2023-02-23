@@ -3,338 +3,113 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import config from "./deno.json" assert { type: "json" };
+import { context } from "$live/live.ts";
 import { DecoManifest } from "$live/types.ts";
 import * as $0 from "./routes/[...catchall].tsx";
 import * as $1 from "./routes/_app.tsx";
 import * as $2 from "./routes/_middleware.ts";
-import * as $3 from "./routes/api/cart/index.ts";
-import * as $4 from "./routes/api/cart/items.ts";
-import * as $5 from "./routes/index.tsx";
-import * as $6 from "./routes/inspect-vscode.ts";
-import * as $$0 from "./islands/AddToCart.tsx";
-import * as $$1 from "./islands/LiveControls.tsx";
-import * as $$2 from "./islands/Minicart.tsx";
-import * as $$3 from "./islands/ProductInformation.tsx";
-import * as $$4 from "./islands/SearchBar.tsx";
+import * as $3 from "./routes/api/[...catchall].tsx";
+import * as $4 from "./routes/index.tsx";
+import * as $5 from "./routes/inspect-vscode.ts";
+import * as $6 from "./routes/style.css.ts";
+import * as $$0 from "./islands/AddToCartButton.tsx";
+import * as $$1 from "./islands/CartButton.tsx";
+import * as $$2 from "./islands/CartModal.tsx";
+import * as $$3 from "./islands/LiveControls.tsx";
+import * as $$4 from "./islands/Menu.tsx";
 import * as $$5 from "./islands/SearchControls.tsx";
 import * as $$6 from "./islands/Slider.tsx";
-import * as $$$0 from "./sections/Banner.tsx";
-import * as $$$1 from "./sections/BannerImg.tsx";
-import * as $$$2 from "./sections/BannnerGrid.tsx";
-import * as $$$3 from "./sections/Button.story.tsx";
-import * as $$$4 from "./sections/Footer.tsx";
-import * as $$$5 from "./sections/Head.tsx";
-import * as $$$6 from "./sections/Header.tsx";
-import * as $$$7 from "./sections/HighlightedFeatures.tsx";
-import * as $$$8 from "./sections/HomeFilter.tsx";
-import * as $$$9 from "./sections/IconCart.tsx";
-import * as $$$10 from "./sections/ListLinks.tsx";
-import * as $$$11 from "./sections/MarcasConvidadas.tsx";
-import * as $$$12 from "./sections/Newsletter.tsx";
-import * as $$$13 from "./sections/ProductDetails.tsx";
-import * as $$$14 from "./sections/ProductGallery.tsx";
-import * as $$$15 from "./sections/ProductShelf.tsx";
-import * as $$$16 from "./sections/Search.tsx";
-import * as $$$17 from "./sections/SearchControls.tsx";
-import * as $$$18 from "./sections/Spacer.tsx";
-import * as $$$19 from "./sections/StoreFeatures.tsx";
-import * as $$$20 from "./sections/VideoCarousel.tsx";
+import * as $$$0 from "./sections/Button.story.tsx";
+import * as $$$1 from "./sections/Carousel.tsx";
+import * as $$$2 from "./sections/Features.tsx";
+import * as $$$3 from "./sections/Footer.tsx";
+import * as $$$4 from "./sections/Head.tsx";
+import * as $$$5 from "./sections/Header.tsx";
+import * as $$$6 from "./sections/Highlights.tsx";
+import * as $$$7 from "./sections/Newsletter.tsx";
+import * as $$$8 from "./sections/ProductDetails.tsx";
+import * as $$$9 from "./sections/ProductGallery.tsx";
+import * as $$$10 from "./sections/ProductShelf.tsx";
+import * as $$$11 from "./sections/SearchControls.tsx";
+import * as $$$12 from "./sections/Spacer.tsx";
+import * as $$$13 from "./sections/TemplateCarousel.tsx";
+import * as $$$14 from "./sections/TemplateFeatures.tsx";
+import * as $$$15 from "./sections/TemplateFooter.tsx";
+import * as $$$16 from "./sections/TemplateHead.tsx";
+import * as $$$17 from "./sections/TemplateHeader.tsx";
+import * as $$$18 from "./sections/TemplateHighlights.tsx";
+import * as $$$19 from "./sections/TemplateNewsletter.tsx";
+import * as $$$20 from "./sections/TemplateSpacer.tsx";
 import * as $$$21 from "./sections/vtexconfig.global.tsx";
-import * as $$$$0 from "./functions/scrapData.ts";
-import * as $$$$1 from "./functions/shopifyProductDetailsPage.ts";
-import * as $$$$2 from "./functions/shopifyProductList.ts";
-import * as $$$$3 from "./functions/shopifyProductListingPage.ts";
-import * as $$$$4 from "./functions/vtexProductDetailsPage.ts";
-import * as $$$$5 from "./functions/vtexProductList.ts";
-import * as $$$$6 from "./functions/vtexProductListingPage.ts";
+import * as $$$$0 from "./functions/occProductDetailsPage.ts";
+import * as $$$$1 from "./functions/scrapData.ts";
+import * as $$$$2 from "./functions/shopifyProductDetailsPage.ts";
+import * as $$$$3 from "./functions/shopifyProductList.ts";
+import * as $$$$4 from "./functions/shopifyProductListingPage.ts";
+import * as $$$$5 from "./functions/vtexLegacyProductDetailsPage.ts";
+import * as $$$$6 from "./functions/vtexLegacyProductList.ts";
+import * as $$$$7 from "./functions/vtexLegacyProductListingPage.ts";
+import * as $$$$8 from "./functions/vtexProductDetailsPage.ts";
+import * as $$$$9 from "./functions/vtexProductList.ts";
+import * as $$$$10 from "./functions/vtexProductListingPage.ts";
 
 const manifest: DecoManifest = {
   routes: {
     "./routes/[...catchall].tsx": $0,
     "./routes/_app.tsx": $1,
     "./routes/_middleware.ts": $2,
-    "./routes/api/cart/index.ts": $3,
-    "./routes/api/cart/items.ts": $4,
-    "./routes/index.tsx": $5,
-    "./routes/inspect-vscode.ts": $6,
+    "./routes/api/[...catchall].tsx": $3,
+    "./routes/index.tsx": $4,
+    "./routes/inspect-vscode.ts": $5,
+    "./routes/style.css.ts": $6,
   },
   islands: {
-    "./islands/AddToCart.tsx": $$0,
-    "./islands/LiveControls.tsx": $$1,
-    "./islands/Minicart.tsx": $$2,
-    "./islands/ProductInformation.tsx": $$3,
-    "./islands/SearchBar.tsx": $$4,
+    "./islands/AddToCartButton.tsx": $$0,
+    "./islands/CartButton.tsx": $$1,
+    "./islands/CartModal.tsx": $$2,
+    "./islands/LiveControls.tsx": $$3,
+    "./islands/Menu.tsx": $$4,
     "./islands/SearchControls.tsx": $$5,
     "./islands/Slider.tsx": $$6,
   },
   sections: {
-    "./sections/Banner.tsx": $$$0,
-    "./sections/BannerImg.tsx": $$$1,
-    "./sections/BannnerGrid.tsx": $$$2,
-    "./sections/Button.story.tsx": $$$3,
-    "./sections/Footer.tsx": $$$4,
-    "./sections/Head.tsx": $$$5,
-    "./sections/Header.tsx": $$$6,
-    "./sections/HighlightedFeatures.tsx": $$$7,
-    "./sections/HomeFilter.tsx": $$$8,
-    "./sections/IconCart.tsx": $$$9,
-    "./sections/ListLinks.tsx": $$$10,
-    "./sections/MarcasConvidadas.tsx": $$$11,
-    "./sections/Newsletter.tsx": $$$12,
-    "./sections/ProductDetails.tsx": $$$13,
-    "./sections/ProductGallery.tsx": $$$14,
-    "./sections/ProductShelf.tsx": $$$15,
-    "./sections/Search.tsx": $$$16,
-    "./sections/SearchControls.tsx": $$$17,
-    "./sections/Spacer.tsx": $$$18,
-    "./sections/StoreFeatures.tsx": $$$19,
-    "./sections/VideoCarousel.tsx": $$$20,
+    "./sections/Button.story.tsx": $$$0,
+    "./sections/Carousel.tsx": $$$1,
+    "./sections/Features.tsx": $$$2,
+    "./sections/Footer.tsx": $$$3,
+    "./sections/Head.tsx": $$$4,
+    "./sections/Header.tsx": $$$5,
+    "./sections/Highlights.tsx": $$$6,
+    "./sections/Newsletter.tsx": $$$7,
+    "./sections/ProductDetails.tsx": $$$8,
+    "./sections/ProductGallery.tsx": $$$9,
+    "./sections/ProductShelf.tsx": $$$10,
+    "./sections/SearchControls.tsx": $$$11,
+    "./sections/Spacer.tsx": $$$12,
+    "./sections/TemplateCarousel.tsx": $$$13,
+    "./sections/TemplateFeatures.tsx": $$$14,
+    "./sections/TemplateFooter.tsx": $$$15,
+    "./sections/TemplateHead.tsx": $$$16,
+    "./sections/TemplateHeader.tsx": $$$17,
+    "./sections/TemplateHighlights.tsx": $$$18,
+    "./sections/TemplateNewsletter.tsx": $$$19,
+    "./sections/TemplateSpacer.tsx": $$$20,
     "./sections/vtexconfig.global.tsx": $$$21,
   },
   functions: {
-    "./functions/scrapData.ts": $$$$0,
-    "./functions/shopifyProductDetailsPage.ts": $$$$1,
-    "./functions/shopifyProductList.ts": $$$$2,
-    "./functions/shopifyProductListingPage.ts": $$$$3,
-    "./functions/vtexProductDetailsPage.ts": $$$$4,
-    "./functions/vtexProductList.ts": $$$$5,
-    "./functions/vtexProductListingPage.ts": $$$$6,
+    "./functions/occProductDetailsPage.ts": $$$$0,
+    "./functions/scrapData.ts": $$$$1,
+    "./functions/shopifyProductDetailsPage.ts": $$$$2,
+    "./functions/shopifyProductList.ts": $$$$3,
+    "./functions/shopifyProductListingPage.ts": $$$$4,
+    "./functions/vtexLegacyProductDetailsPage.ts": $$$$5,
+    "./functions/vtexLegacyProductList.ts": $$$$6,
+    "./functions/vtexLegacyProductListingPage.ts": $$$$7,
+    "./functions/vtexProductDetailsPage.ts": $$$$8,
+    "./functions/vtexProductList.ts": $$$$9,
+    "./functions/vtexProductListingPage.ts": $$$$10,
   },
   schemas: {
-    "./sections/Banner.tsx": {
-      "inputSchema": {
-        "title": " Banner",
-        "type": "object",
-        "properties": {
-          "imgSrc": {
-            "title": "Img Src",
-            "type": "object",
-            "properties": {
-              "mobile": {
-                "type": "string",
-                "title": "Mobile",
-              },
-              "desktop": {
-                "type": "string",
-                "title": "Desktop",
-              },
-            },
-            "required": [
-              "mobile",
-              "desktop",
-            ],
-          },
-          "alt": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Alt",
-          },
-          "text": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Text",
-          },
-          "title": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Title",
-          },
-          "subtitle": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Subtitle",
-          },
-          "link": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Link",
-          },
-          "CTA": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": " C T A",
-          },
-          "scrapData": {
-            "$id": "5c97451e299aea04f5d52ee67c86d887080ae88c",
-            "format": "live-function",
-            "type": "string",
-            "title": "Scrap Data",
-          },
-        },
-        "required": [
-          "imgSrc",
-        ],
-      },
-      "outputSchema": null,
-    },
-    "./sections/BannerImg.tsx": {
-      "inputSchema": {
-        "title": " Banner Img",
-        "type": "object",
-        "properties": {
-          "imgSrc": {
-            "title": "Img Src",
-            "type": "object",
-            "properties": {
-              "mobile": {
-                "type": "string",
-                "title": "Mobile",
-              },
-              "desktop": {
-                "type": "string",
-                "title": "Desktop",
-              },
-            },
-            "required": [
-              "mobile",
-              "desktop",
-            ],
-          },
-          "alt": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Alt",
-          },
-          "textColor": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Text Color",
-          },
-          "text": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Text",
-          },
-          "title": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Title",
-          },
-          "subtitle": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Subtitle",
-          },
-          "link": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Link",
-          },
-          "CTA": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": " C T A",
-          },
-        },
-        "required": [
-          "imgSrc",
-        ],
-      },
-      "outputSchema": null,
-    },
-    "./sections/BannnerGrid.tsx": {
-      "inputSchema": {
-        "title": " Bannner Grid",
-        "type": "object",
-        "properties": {
-          "title": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Title",
-          },
-          "itemsPerLine": {
-            "title": "Items Per Line",
-            "type": "object",
-            "properties": {
-              "mobile": {
-                "type": [
-                  "number",
-                  "null",
-                ],
-                "title": "Mobile",
-              },
-              "desktop": {
-                "type": [
-                  "number",
-                  "null",
-                ],
-                "title": "Desktop",
-              },
-            },
-            "required": [],
-            "description": "Default is 2 for mobile and all for desktop",
-          },
-          "banners": {
-            "type": "array",
-            "items": {
-              "title": "Banner",
-              "type": "object",
-              "properties": {
-                "srcMobile": {
-                  "format": "image-uri",
-                  "type": "string",
-                  "title": "Src Mobile",
-                },
-                "srcDesktop": {
-                  "format": "image-uri",
-                  "type": "string",
-                  "title": "Src Desktop",
-                },
-                "alt": {
-                  "type": "string",
-                  "title": "Alt",
-                  "description": "Image alt text",
-                },
-                "href": {
-                  "type": "string",
-                  "title": "Href",
-                  "description": "When you click you go to",
-                },
-              },
-              "required": [
-                "srcMobile",
-                "alt",
-                "href",
-              ],
-            },
-            "title": "Banners",
-          },
-        },
-        "required": [
-          "itemsPerLine",
-          "banners",
-        ],
-      },
-      "outputSchema": null,
-    },
     "./sections/Button.story.tsx": {
       "inputSchema": {
         "title": " Button.story",
@@ -402,6 +177,107 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
+    "./sections/Carousel.tsx": {
+      "inputSchema": {
+        "title": " Carousel",
+        "type": "object",
+        "properties": {
+          "images": {
+            "type": "array",
+            "items": {
+              "title": "Image",
+              "type": "object",
+              "properties": {
+                "desktop": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Desktop",
+                  "description": "desktop otimized image",
+                },
+                "mobile": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Mobile",
+                  "description": "mobile otimized image",
+                },
+                "href": {
+                  "type": "string",
+                  "title": "Href",
+                  "description":
+                    "when user clicks on the image, go to this link",
+                },
+                "alt": {
+                  "type": "string",
+                  "title": "Alt",
+                  "description": "Image's alt text",
+                },
+              },
+              "required": [
+                "desktop",
+                "mobile",
+                "href",
+                "alt",
+              ],
+            },
+            "title": "Images",
+          },
+          "preload": {
+            "type": [
+              "boolean",
+              "null",
+            ],
+            "title": "Preload",
+            "description":
+              "Check this option when this banner is the biggest image on the screen for image optimizations",
+          },
+        },
+        "required": [],
+      },
+      "outputSchema": null,
+    },
+    "./sections/Features.tsx": {
+      "inputSchema": {
+        "title": " Features",
+        "type": "object",
+        "properties": {
+          "features": {
+            "type": "array",
+            "items": {
+              "title": "Feature",
+              "type": "object",
+              "properties": {
+                "src": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Src",
+                  "description": "Image src",
+                },
+                "title": {
+                  "type": "string",
+                  "title": "Title",
+                  "description": "Title",
+                },
+                "description": {
+                  "type": "string",
+                  "title": "Description",
+                  "description": "Description and Image alt text",
+                },
+              },
+              "required": [
+                "src",
+                "title",
+                "description",
+              ],
+            },
+            "title": "Features",
+          },
+        },
+        "required": [
+          "features",
+        ],
+      },
+      "outputSchema": null,
+    },
     "./sections/Footer.tsx": {
       "inputSchema": null,
       "outputSchema": null,
@@ -457,12 +333,6 @@ const manifest: DecoManifest = {
             ],
             "title": "Theme Color",
           },
-          "scrapData": {
-            "$id": "5c97451e299aea04f5d52ee67c86d887080ae88c",
-            "format": "live-function",
-            "type": "string",
-            "title": "Scrap Data",
-          },
         },
         "required": [
           "url",
@@ -482,11 +352,94 @@ const manifest: DecoManifest = {
             },
             "title": "Alerts",
           },
-          "scrapData": {
-            "$id": "5c97451e299aea04f5d52ee67c86d887080ae88c",
-            "format": "live-function",
-            "type": "string",
-            "title": "Scrap Data",
+          "searchbar": {
+            "title": "Search Bar",
+            "type": "object",
+            "properties": {
+              "placeholder": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Placeholder",
+                "description": "Search bar default placeholder message",
+                "default": "What are you looking for?",
+              },
+              "action": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Page path",
+                "description":
+                  "When user clicks on the search button, navigate it to",
+                "default": "/s",
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Term name",
+                "description":
+                  "Querystring param used when navigating the user",
+                "default": "q",
+              },
+              "query": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Query",
+              },
+            },
+            "required": [],
+          },
+          "navItems": {
+            "type": "array",
+            "items": {
+              "title": "Item",
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "title": "Label",
+                },
+                "href": {
+                  "type": "string",
+                  "title": "Href",
+                },
+                "children": {
+                  "title": "Children",
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "title": "Label",
+                      },
+                      "href": {
+                        "type": "string",
+                        "title": "Href",
+                      },
+                    },
+                    "required": [
+                      "label",
+                      "href",
+                    ],
+                  },
+                },
+              },
+              "required": [
+                "label",
+                "href",
+                "children",
+              ],
+            },
+            "title": "Navigation items",
+            "description":
+              "Navigation items used both on mobile and desktop menus",
           },
         },
         "required": [
@@ -495,13 +448,234 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
-    "./sections/HighlightedFeatures.tsx": {
+    "./sections/Highlights.tsx": {
       "inputSchema": {
-        "title": " Highlighted Features",
+        "title": " Highlights",
+        "type": "object",
+        "properties": {
+          "highlights": {
+            "type": "array",
+            "items": {
+              "title": "Highlight",
+              "type": "object",
+              "properties": {
+                "src": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Src",
+                },
+                "alt": {
+                  "type": "string",
+                  "title": "Alt",
+                },
+                "href": {
+                  "type": "string",
+                  "title": "Href",
+                },
+                "label": {
+                  "type": "string",
+                  "title": "Label",
+                },
+              },
+              "required": [
+                "src",
+                "alt",
+                "href",
+                "label",
+              ],
+            },
+            "title": "Highlights",
+          },
+          "title": {
+            "type": "string",
+            "title": "Title",
+          },
+        },
+        "required": [
+          "title",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "./sections/Newsletter.tsx": {
+      "inputSchema": null,
+      "outputSchema": null,
+    },
+    "./sections/ProductDetails.tsx": {
+      "inputSchema": {
+        "title": " Product Details",
+        "type": "object",
+        "properties": {
+          "page": {
+            "$id": "77c3750ca550c4476e576a53c2aa0bf943d6dd33",
+            "format": "live-function",
+            "type": "string",
+            "title": "Page",
+          },
+        },
+        "required": [
+          "page",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "./sections/ProductGallery.tsx": {
+      "inputSchema": {
+        "title": " Product Gallery",
+        "type": "object",
+        "properties": {
+          "page": {
+            "$id": "32f8a6c92e01d08eaba8ff4e3e4f0985c1b774f9",
+            "format": "live-function",
+            "type": "string",
+            "title": "Page",
+          },
+        },
+        "required": [
+          "page",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "./sections/ProductShelf.tsx": {
+      "inputSchema": {
+        "title": " Product Shelf",
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Title",
+          },
+          "products": {
+            "$id": "18e9298f44fabfefab948fb98a413b90224be6a0",
+            "format": "live-function",
+            "type": "string",
+            "title": "Products",
+          },
+        },
+        "required": [
+          "title",
+          "products",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "./sections/SearchControls.tsx": {
+      "inputSchema": {
+        "title": " Search Controls",
+        "type": "object",
+        "properties": {
+          "page": {
+            "$id": "32f8a6c92e01d08eaba8ff4e3e4f0985c1b774f9",
+            "format": "live-function",
+            "type": "string",
+            "title": "Page",
+          },
+        },
+        "required": [
+          "page",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "./sections/Spacer.tsx": {
+      "inputSchema": {
+        "title": " Spacer",
+        "type": "object",
+        "properties": {
+          "height": {
+            "title": "Height",
+            "type": "object",
+            "properties": {
+              "mobile": {
+                "type": "number",
+                "title": "Mobile",
+              },
+              "desktop": {
+                "type": "number",
+                "title": "Desktop",
+              },
+            },
+            "required": [
+              "mobile",
+              "desktop",
+            ],
+          },
+        },
+        "required": [],
+      },
+      "outputSchema": null,
+    },
+    "./sections/TemplateCarousel.tsx": {
+      "inputSchema": {
+        "title": " Template Carousel",
+        "type": "object",
+        "properties": {
+          "scrapData": {
+            "$id": "334d52bc048fb38e9e9bebbd611fd7144c1c42cb",
+            "format": "live-function",
+            "type": "string",
+            "title": "Scrap Data",
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "title": "Image",
+              "type": "object",
+              "properties": {
+                "desktop": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Desktop",
+                  "description": "desktop otimized image",
+                },
+                "mobile": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Mobile",
+                  "description": "mobile otimized image",
+                },
+                "href": {
+                  "type": "string",
+                  "title": "Href",
+                  "description":
+                    "when user clicks on the image, go to this link",
+                },
+                "alt": {
+                  "type": "string",
+                  "title": "Alt",
+                  "description": "Image's alt text",
+                },
+              },
+              "required": [
+                "desktop",
+                "mobile",
+                "href",
+                "alt",
+              ],
+            },
+            "title": "Images",
+          },
+          "preload": {
+            "type": [
+              "boolean",
+              "null",
+            ],
+            "title": "Preload",
+            "description":
+              "Check this option when this banner is the biggest image on the screen for image optimizations",
+          },
+        },
+        "required": [],
+      },
+      "outputSchema": null,
+    },
+    "./sections/TemplateFeatures.tsx": {
+      "inputSchema": {
+        "title": " Template Features",
         "type": "object",
         "properties": {
           "features": {
-            "title": "Features",
             "type": "array",
             "items": {
               "title": "Feature",
@@ -530,6 +704,7 @@ const manifest: DecoManifest = {
                 "description",
               ],
             },
+            "title": "Features",
           },
         },
         "required": [
@@ -538,83 +713,199 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
-    "./sections/HomeFilter.tsx": {
+    "./sections/TemplateFooter.tsx": {
       "inputSchema": null,
       "outputSchema": null,
     },
-    "./sections/IconCart.tsx": {
+    "./sections/TemplateHead.tsx": {
       "inputSchema": {
-        "title": " Icon Cart",
+        "title": " Template Head",
         "type": "object",
         "properties": {
-          "size": {
+          "scrapData": {
+            "$id": "334d52bc048fb38e9e9bebbd611fd7144c1c42cb",
+            "format": "live-function",
+            "type": "string",
+            "title": "Scrap Data",
+          },
+          "title": {
             "type": [
-              "number",
+              "string",
               "null",
             ],
-            "title": "Size",
+            "title": "Title",
+          },
+          "description": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Description",
+          },
+          "url": {
+            "type": "string",
+            "title": "Url",
+          },
+          "imageUrl": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Image Url",
+          },
+          "faviconUrl": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Favicon Url",
+          },
+          "styleUrls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+            },
+            "title": "Style Urls",
+          },
+          "themeColor": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Theme Color",
           },
         },
-        "required": [],
+        "required": [
+          "url",
+        ],
       },
       "outputSchema": null,
     },
-    "./sections/ListLinks.tsx": {
-      "inputSchema": null,
-      "outputSchema": null,
-    },
-    "./sections/MarcasConvidadas.tsx": {
+    "./sections/TemplateHeader.tsx": {
       "inputSchema": {
-        "title": " Marcas Convidadas",
+        "title": " Template Header",
         "type": "object",
         "properties": {
-          "title": {
+          "scrapData": {
+            "$id": "334d52bc048fb38e9e9bebbd611fd7144c1c42cb",
+            "format": "live-function",
             "type": "string",
-            "title": "Title",
+            "title": "Scrap Data",
           },
-          "mainBanner": {
-            "title": "Main Banner",
-            "type": "object",
-            "properties": {
-              "href": {
-                "type": "string",
-                "title": "Href",
-              },
-              "smallSrc": {
-                "format": "image-uri",
-                "type": "string",
-                "title": "Small Src",
-                "description": "Image src for small screen devices (mobile)",
-              },
-              "largeSrc": {
-                "format": "image-uri",
-                "type": "string",
-                "title": "Large Src",
-                "description": "Image src for large screen devices (desktop)",
-              },
-              "alt": {
-                "type": "string",
-                "title": "Alt",
-                "description": "Image alt text",
-              },
-            },
-            "required": [
-              "href",
-              "smallSrc",
-              "largeSrc",
-              "alt",
-            ],
-          },
-          "banners": {
+          "alerts": {
             "type": "array",
             "items": {
-              "title": "Banner",
+              "type": "string",
+            },
+            "title": "Alerts",
+          },
+          "searchbar": {
+            "title": "Search Bar",
+            "type": "object",
+            "properties": {
+              "placeholder": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Placeholder",
+                "description": "Search bar default placeholder message",
+                "default": "What are you looking for?",
+              },
+              "action": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Page path",
+                "description":
+                  "When user clicks on the search button, navigate it to",
+                "default": "/s",
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Term name",
+                "description":
+                  "Querystring param used when navigating the user",
+                "default": "q",
+              },
+              "query": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Query",
+              },
+            },
+            "required": [],
+          },
+          "navItems": {
+            "type": "array",
+            "items": {
+              "title": "Item",
               "type": "object",
               "properties": {
+                "label": {
+                  "type": "string",
+                  "title": "Label",
+                },
                 "href": {
                   "type": "string",
                   "title": "Href",
                 },
+                "children": {
+                  "title": "Children",
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "title": "Label",
+                      },
+                      "href": {
+                        "type": "string",
+                        "title": "Href",
+                      },
+                    },
+                    "required": [
+                      "label",
+                      "href",
+                    ],
+                  },
+                },
+              },
+              "required": [
+                "label",
+                "href",
+                "children",
+              ],
+            },
+            "title": "Navigation items",
+            "description":
+              "Navigation items used both on mobile and desktop menus",
+          },
+        },
+        "required": [
+          "alerts",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "./sections/TemplateHighlights.tsx": {
+      "inputSchema": {
+        "title": " Template Highlights",
+        "type": "object",
+        "properties": {
+          "highlights": {
+            "type": "array",
+            "items": {
+              "title": "Highlight",
+              "type": "object",
+              "properties": {
                 "src": {
                   "format": "image-uri",
                   "type": "string",
@@ -623,205 +914,65 @@ const manifest: DecoManifest = {
                 "alt": {
                   "type": "string",
                   "title": "Alt",
-                  "description": "Image alt text",
+                },
+                "href": {
+                  "type": "string",
+                  "title": "Href",
+                },
+                "label": {
+                  "type": "string",
+                  "title": "Label",
                 },
               },
               "required": [
-                "href",
                 "src",
                 "alt",
+                "href",
+                "label",
               ],
             },
-            "title": "Banners",
+            "title": "Highlights",
           },
-        },
-        "required": [
-          "title",
-          "mainBanner",
-          "banners",
-        ],
-      },
-      "outputSchema": null,
-    },
-    "./sections/Newsletter.tsx": {
-      "inputSchema": null,
-      "outputSchema": null,
-    },
-    "./sections/ProductDetails.tsx": {
-      "inputSchema": {
-        "title": " Product Details",
-        "type": "object",
-        "properties": {
-          "page": {
-            "$id": "85d77d809b0be6ec54dbe06b714da53af53b54db",
-            "format": "live-function",
-            "type": "string",
-            "title": "Page",
-          },
-        },
-        "required": [
-          "page",
-        ],
-      },
-      "outputSchema": null,
-    },
-    "./sections/ProductGallery.tsx": {
-      "inputSchema": {
-        "title": " Product Gallery",
-        "type": "object",
-        "properties": {
-          "page": {
-            "$id": "62615533560fc71180a86d2f3398b2396d2cbbc5",
-            "format": "live-function",
-            "type": "string",
-            "title": "Page",
-          },
-        },
-        "required": [
-          "page",
-        ],
-      },
-      "outputSchema": null,
-    },
-    "./sections/ProductShelf.tsx": {
-      "inputSchema": {
-        "title": " Product Shelf",
-        "type": "object",
-        "properties": {
           "title": {
             "type": "string",
             "title": "Title",
           },
-          "products": {
-            "$id": "546cbd7d0ccd06d3cfddd3184a52c465c9b5139a",
-            "format": "live-function",
-            "type": "string",
-            "title": "Products",
-          },
         },
         "required": [
           "title",
-          "products",
         ],
       },
       "outputSchema": null,
     },
-    "./sections/Search.tsx": {
-      "inputSchema": {
-        "title": " Search",
-        "type": "object",
-        "properties": {
-          "query": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Query",
-          },
-        },
-        "required": [],
-      },
-      "outputSchema": null,
-    },
-    "./sections/SearchControls.tsx": {
-      "inputSchema": {
-        "title": " Search Controls",
-        "type": "object",
-        "properties": {
-          "page": {
-            "$id": "62615533560fc71180a86d2f3398b2396d2cbbc5",
-            "format": "live-function",
-            "type": "string",
-            "title": "Page",
-          },
-        },
-        "required": [
-          "page",
-        ],
-      },
-      "outputSchema": null,
-    },
-    "./sections/Spacer.tsx": {
-      "inputSchema": {
-        "title": " Spacer",
-        "type": "object",
-        "properties": {
-          "height": {
-            "type": [
-              "number",
-              "null",
-            ],
-            "title": "Height",
-          },
-          "heightMobile": {
-            "type": [
-              "number",
-              "null",
-            ],
-            "title": "Height Mobile",
-          },
-        },
-        "required": [],
-      },
-      "outputSchema": null,
-    },
-    "./sections/StoreFeatures.tsx": {
+    "./sections/TemplateNewsletter.tsx": {
       "inputSchema": null,
       "outputSchema": null,
     },
-    "./sections/VideoCarousel.tsx": {
+    "./sections/TemplateSpacer.tsx": {
       "inputSchema": {
-        "title": " Video Carousel",
+        "title": " Template Spacer",
         "type": "object",
         "properties": {
-          "videos": {
-            "title": "Videos",
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "mobile": {
-                  "format": "video-uri",
-                  "type": "string",
-                  "title": "Mobile",
-                },
-                "desktop": {
-                  "format": "video-uri",
-                  "type": "string",
-                  "title": "Desktop",
-                },
-                "alt": {
-                  "type": [
-                    "string",
-                    "null",
-                  ],
-                  "title": "Alt",
-                },
-                "link": {
-                  "type": "string",
-                  "title": "Link",
-                },
+          "height": {
+            "title": "Height",
+            "type": "object",
+            "properties": {
+              "mobile": {
+                "type": "number",
+                "title": "Mobile",
               },
-              "required": [
-                "mobile",
-                "desktop",
-                "link",
-              ],
+              "desktop": {
+                "type": "number",
+                "title": "Desktop",
+              },
             },
-          },
-          "delay": {
-            "type": [
-              "number",
-              "null",
+            "required": [
+              "mobile",
+              "desktop",
             ],
-            "title": "delay",
-            "description": "Time to switch slides in seconds",
-            "default": "3",
           },
         },
-        "required": [
-          "videos",
-        ],
+        "required": [],
       },
       "outputSchema": null,
     },
@@ -856,6 +1007,21 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
+    "./functions/occProductDetailsPage.ts": {
+      "inputSchema": {
+        "type": "null",
+        "title": "Occ Product Details Page",
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "77c3750ca550c4476e576a53c2aa0bf943d6dd33",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
     "./functions/scrapData.ts": {
       "inputSchema": {
         "title": "Scrap Data",
@@ -875,7 +1041,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "5c97451e299aea04f5d52ee67c86d887080ae88c",
+            "$id": "334d52bc048fb38e9e9bebbd611fd7144c1c42cb",
           },
         },
         "additionalProperties": true,
@@ -890,7 +1056,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "85d77d809b0be6ec54dbe06b714da53af53b54db",
+            "$id": "77c3750ca550c4476e576a53c2aa0bf943d6dd33",
           },
         },
         "additionalProperties": true,
@@ -921,7 +1087,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "546cbd7d0ccd06d3cfddd3184a52c465c9b5139a",
+            "$id": "18e9298f44fabfefab948fb98a413b90224be6a0",
           },
         },
         "additionalProperties": true,
@@ -954,43 +1120,49 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "62615533560fc71180a86d2f3398b2396d2cbbc5",
+            "$id": "32f8a6c92e01d08eaba8ff4e3e4f0985c1b774f9",
           },
         },
         "additionalProperties": true,
       },
     },
-    "./functions/vtexProductDetailsPage.ts": {
+    "./functions/vtexLegacyProductDetailsPage.ts": {
       "inputSchema": {
         "type": "null",
-        "title": "Vtex Product Details Page",
+        "title": "Vtex Legacy Product Details Page",
       },
       "outputSchema": {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "85d77d809b0be6ec54dbe06b714da53af53b54db",
+            "$id": "77c3750ca550c4476e576a53c2aa0bf943d6dd33",
           },
         },
         "additionalProperties": true,
       },
     },
-    "./functions/vtexProductList.ts": {
+    "./functions/vtexLegacyProductList.ts": {
       "inputSchema": {
-        "title": "Vtex Product List",
+        "title": "Vtex Legacy Product List",
         "type": "object",
         "properties": {
           "query": {
-            "type": [
-              "string",
-              "null",
-            ],
+            "type": "string",
             "title": "Query",
             "description": "query to use on search",
+          },
+          "count": {
+            "type": "number",
+            "title": "Count",
+            "description": "total number of items to display",
           },
           "sort": {
             "type": "string",
             "anyOf": [
+              {
+                "type": "string",
+                "const": "",
+              },
               {
                 "type": "string",
                 "const": "price:desc",
@@ -1019,18 +1191,66 @@ const manifest: DecoManifest = {
                 "type": "string",
                 "const": "discount:desc",
               },
-              {
-                "type": "string",
-                "const": "",
-              },
             ],
             "title": "Sort",
-            "description": "sort strategy",
+            "description": "search sort parameter",
+          },
+        },
+        "required": [
+          "query",
+          "count",
+        ],
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "18e9298f44fabfefab948fb98a413b90224be6a0",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "./functions/vtexLegacyProductListingPage.ts": {
+      "inputSchema": {
+        "title": "Vtex Legacy Product Listing Page",
+        "type": "object",
+        "properties": {
+          "term": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Term",
+            "description": "overides the query term",
           },
           "count": {
             "type": "number",
-            "title": "Count",
-            "description": "total number of items to display",
+            "title": "Items per page",
+            "description": "number of products per page to display",
+          },
+          "ft": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Ft",
+            "description": "FullText term",
+          },
+          "fq": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Fq",
+          },
+          "map": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Map",
+            "description": "map param",
           },
         },
         "required": [
@@ -1041,7 +1261,92 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "546cbd7d0ccd06d3cfddd3184a52c465c9b5139a",
+            "$id": "32f8a6c92e01d08eaba8ff4e3e4f0985c1b774f9",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "./functions/vtexProductDetailsPage.ts": {
+      "inputSchema": {
+        "type": "null",
+        "title": "Vtex Product Details Page",
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "77c3750ca550c4476e576a53c2aa0bf943d6dd33",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "./functions/vtexProductList.ts": {
+      "inputSchema": {
+        "title": "Vtex Product List",
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "title": "Query",
+            "description": "query to use on search",
+          },
+          "count": {
+            "type": "number",
+            "title": "Count",
+            "description": "total number of items to display",
+          },
+          "sort": {
+            "type": "string",
+            "anyOf": [
+              {
+                "type": "string",
+                "const": "",
+              },
+              {
+                "type": "string",
+                "const": "price:desc",
+              },
+              {
+                "type": "string",
+                "const": "price:asc",
+              },
+              {
+                "type": "string",
+                "const": "orders:desc",
+              },
+              {
+                "type": "string",
+                "const": "name:desc",
+              },
+              {
+                "type": "string",
+                "const": "name:asc",
+              },
+              {
+                "type": "string",
+                "const": "release:desc",
+              },
+              {
+                "type": "string",
+                "const": "discount:desc",
+              },
+            ],
+            "title": "Sort",
+            "description": "search sort parameter",
+          },
+        },
+        "required": [
+          "query",
+          "count",
+        ],
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "18e9298f44fabfefab948fb98a413b90224be6a0",
           },
         },
         "additionalProperties": true,
@@ -1074,7 +1379,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "62615533560fc71180a86d2f3398b2396d2cbbc5",
+            "$id": "32f8a6c92e01d08eaba8ff4e3e4f0985c1b774f9",
           },
         },
         "additionalProperties": true,
@@ -1086,6 +1391,6 @@ const manifest: DecoManifest = {
 };
 
 // live — this exposes the manifest so the live server can render components dynamically
-globalThis.manifest = manifest;
+context.manifest = manifest;
 
 export default manifest;

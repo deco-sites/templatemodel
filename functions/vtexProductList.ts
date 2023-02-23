@@ -7,16 +7,27 @@ import type { LoaderFunction } from "$live/std/types.ts";
 import type { LiveState } from "$live/types.ts";
 
 import { defaultVTEXSettings, vtex } from "../clients/instances.ts";
-import { VTEXConfig } from "../sections/vtexconfig.global.tsx";
-import { Sort } from "$live/std/commerce/vtex/types.ts";
+import type { VTEXConfig } from "../sections/vtexconfig.global.tsx";
+import type { Sort } from "$live/std/commerce/vtex/types.ts";
 
 export interface Props {
   /** @description query to use on search */
-  query?: string;
-  /** @description sort strategy */
-  sort?: Sort;
+  query: string;
   /** @description total number of items to display */
   count: number;
+  //* @enumNames ["relevance", "greater discount", "arrivals", "name asc", "name desc", "most ordered", "price asc", "price desc"]
+  /**
+   * @description search sort parameter
+   */
+  sort?:
+    | ""
+    | "price:desc"
+    | "price:asc"
+    | "orders:desc"
+    | "name:desc"
+    | "name:asc"
+    | "release:desc"
+    | "discount:desc";
 }
 
 /**
@@ -32,35 +43,34 @@ const productListLoader: LoaderFunction<
   ctx,
   props,
 ) => {
-  const count = props.count ?? 12;
-  const query = props.query ?? " ";
-  const sort = props.sort || "";
-  const loja = ctx.params.loja;
   const client = getSupabaseClient();
-
-  const data =
+  const loja = ctx.params.loja;
+  const scrapData =
     (await client.from("scrap").select().eq("domain", loja).single()).data;
-  const scrapDataVTEXConfig = data?.vtexconfig
-    ? JSON.parse(data.vtexconfig)
+
+  const scrapDataVTEXConfig = scrapData?.vtexconfig
+    ? JSON.parse(scrapData.vtexconfig)
     : {};
 
-  const searchArgs = {
+  const vtexConfig = { ...defaultVTEXSettings, ...scrapDataVTEXConfig };
+
+  const count = props.count ?? 12;
+  const query = props.query || "";
+  const sort: Sort = props.sort || "";
+
+  // search products on VTEX. Feel free to change any of these parameters
+  const { products: vtexProducts } = await vtex.search.products({
     query,
     page: 0,
-    sort,
     count,
-    ...(ctx.state.global.vtexconfig ?? defaultVTEXSettings),
-    ...scrapDataVTEXConfig,
-  };
-  console.log(searchArgs);
-  // search prodcuts on VTEX. Feel free to change any of these parameters
-  const productsResult = await vtex.search.products(searchArgs);
-  const { products: vtexProducts } = productsResult;
+    sort,
+    ...vtexConfig,
+  });
 
   // Transform VTEX product format into schema.org's compatible format
   // If a property is missing from the final `products` array you can add
   // it in here
-  const products = vtexProducts.map((p) => toProduct(p, p.items[0]));
+  const products = vtexProducts.map((p) => toProduct(p, p.items[0], 0));
 
   return {
     data: products,

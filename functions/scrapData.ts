@@ -5,6 +5,8 @@ export type voidProps = {
   null?: string;
 };
 export type scrapProps = {
+  domain: string;
+  created_at: string;
   logos: string[];
   colors: number[][];
   banners: string[];
