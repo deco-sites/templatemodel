@@ -12,7 +12,7 @@ export interface Props {
   preload?: boolean;
 }
 
-export default function TemplateBanner(
+export default function TemplateCarousel(
   { scrapData, ...bannerProps }: Props,
 ) {
   let mergedProps = { ...bannerProps };
