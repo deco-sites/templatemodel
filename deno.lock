@@ -372,6 +372,7 @@
     "https://esm.sh/v99/preact@10.11.0/src/index.d.ts": "1a5c331227be54be6515b0c92a469d352834fa413963ae84a39a05a3177111f6",
     "https://esm.sh/v99/preact@10.11.0/src/jsx.d.ts": "c423715fd7992b2e1446fea11d2d04e8adbd66c1edca1ce5e85f90e0d26a2eb2",
     "https://raw.githubusercontent.com/GoogleChrome/dialog-polyfill/5033aac1b74c44f36cde47be3d11f4756f3f8fda/dist/dialog-polyfill.esm.js": "18db62215a0d3141b411c1e15df3c6ff97c8e774afad9625af91c0ff9566352c",
+    "https://raw.githubusercontent.com/deco-sites/fashion/0be18cb75610434bd4ed95f5216080c414176af4/clients/instances.ts": "32f0602a873562ab23222ccca80c13da87d1872428b017301011d6d19f1a086d",
     "https://raw.githubusercontent.com/deco-sites/fashion/0be18cb75610434bd4ed95f5216080c414176af4/components/footer/Footer.tsx": "c715cd2d1413a1d7cd4339ce1c0aa15207c3a6edc8e27c0aa290edd2af815169",
     "https://raw.githubusercontent.com/deco-sites/fashion/0be18cb75610434bd4ed95f5216080c414176af4/components/header/Alert.tsx": "39692c24e6e3edda7f84994db927dff9351f1094537e39d0caf8d2804a876c39",
     "https://raw.githubusercontent.com/deco-sites/fashion/0be18cb75610434bd4ed95f5216080c414176af4/components/header/Header.tsx": "a5fbc38bde207400b7c3d2d84cdbd911d209e8b936bf9775b343d18d07391a06",
@@ -401,6 +402,7 @@
     "https://raw.githubusercontent.com/deco-sites/fashion/0be18cb75610434bd4ed95f5216080c414176af4/components/ui/Slider.tsx": "9df69ab20aea6d4a95f0343fb0c29212bd430d76096b7e95000f5f866b041ebe",
     "https://raw.githubusercontent.com/deco-sites/fashion/0be18cb75610434bd4ed95f5216080c414176af4/components/ui/Spacer.tsx": "2b01189efefe3f35efd7c66cd647279a164ad9f4323ec40b7c8a6389d9e05adb",
     "https://raw.githubusercontent.com/deco-sites/fashion/0be18cb75610434bd4ed95f5216080c414176af4/components/ui/Spinner.tsx": "67d94fc1f96b6667fe4f20508e297f98aa9c8651e3d674d3ebc877b4b37e3d98",
+    "https://raw.githubusercontent.com/deco-sites/fashion/0be18cb75610434bd4ed95f5216080c414176af4/functions/vtexProductList.ts": "4c5812a9244916529ec99ede490c4e4e00eceda6f0fe9de02cb1435dcfa708c1",
     "https://raw.githubusercontent.com/deco-sites/fashion/0be18cb75610434bd4ed95f5216080c414176af4/islands/CartButton.tsx": "2ec84020025fe7406758beb446c03610f108621a5585856ba58e1552659fbe6f",
     "https://raw.githubusercontent.com/deco-sites/fashion/0be18cb75610434bd4ed95f5216080c414176af4/islands/CartModal.tsx": "a3864d0a51091f17b3fe89eddddf0670d7186505a9adc60ed283d8c9d2fcb575",
     "https://raw.githubusercontent.com/deco-sites/fashion/0be18cb75610434bd4ed95f5216080c414176af4/islands/Menu.tsx": "2dfaf9d7b8a0e4590bf913ce99f1548f19d97974098e4534f138b22d0821848e",
@@ -416,6 +418,7 @@
     "https://raw.githubusercontent.com/deco-sites/fashion/0be18cb75610434bd4ed95f5216080c414176af4/sections/Header.tsx": "bfc03f8377ddb3de4b66833292f14282ac379eb66647cffe3e41234662737da5",
     "https://raw.githubusercontent.com/deco-sites/fashion/0be18cb75610434bd4ed95f5216080c414176af4/sections/Highlights.tsx": "e9ce5061215613ce44e6b1a68fa971013fb0dd216d779e172f69dbe60a9a2093",
     "https://raw.githubusercontent.com/deco-sites/fashion/0be18cb75610434bd4ed95f5216080c414176af4/sections/Newsletter.tsx": "0c4826b0ff8facb71e232bfe12263385a872c4e882bb365ae19dac47c1199962",
-    "https://raw.githubusercontent.com/deco-sites/fashion/0be18cb75610434bd4ed95f5216080c414176af4/sections/Spacer.tsx": "8f4c7dbd002c8677f7d681d06b037a4a170b1069bb8f9ddccc16e6f1a28643db"
+    "https://raw.githubusercontent.com/deco-sites/fashion/0be18cb75610434bd4ed95f5216080c414176af4/sections/Spacer.tsx": "8f4c7dbd002c8677f7d681d06b037a4a170b1069bb8f9ddccc16e6f1a28643db",
+    "https://raw.githubusercontent.com/deco-sites/fashion/0be18cb75610434bd4ed95f5216080c414176af4/sections/vtexconfig.global.tsx": "b06fb1bef664c8911f2b915cbec302eb26494226235b4b14c3522dbe763c067d"
   }
 }

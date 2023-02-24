@@ -22,9 +22,8 @@ import * as $$$5 from "./sections/TemplateHighlights.tsx";
 import * as $$$6 from "./sections/TemplateNewsletter.tsx";
 import * as $$$7 from "./sections/TemplateProductShelf.tsx";
 import * as $$$8 from "./sections/TemplateSpacer.tsx";
-import * as $$$9 from "./sections/vtexconfig.global.tsx";
 import * as $$$$0 from "./functions/scrapData.ts";
-import * as $$$$1 from "./functions/vtexProductList.ts";
+import * as $$$$1 from "./functions/templateVtexProductList.ts";
 
 const manifest: DecoManifest = {
   routes: {
@@ -47,11 +46,10 @@ const manifest: DecoManifest = {
     "./sections/TemplateNewsletter.tsx": $$$6,
     "./sections/TemplateProductShelf.tsx": $$$7,
     "./sections/TemplateSpacer.tsx": $$$8,
-    "./sections/vtexconfig.global.tsx": $$$9,
   },
   functions: {
     "./functions/scrapData.ts": $$$$0,
-    "./functions/vtexProductList.ts": $$$$1,
+    "./functions/templateVtexProductList.ts": $$$$1,
   },
   schemas: {
     "./sections/TemplateCarousel.tsx": {
@@ -447,37 +445,6 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
-    "./sections/vtexconfig.global.tsx": {
-      "inputSchema": {
-        "title": "Vtexconfig.global",
-        "type": "object",
-        "properties": {
-          "account": {
-            "type": "string",
-            "title": "Account",
-            "description":
-              "VTEX Account name. For more info, read here: https://help.vtex.com/en/tutorial/o-que-e-account-name--i0mIGLcg3QyEy8OCicEoC.",
-          },
-          "salesChannel": {
-            "type": "string",
-            "title": "Sales Channel",
-            "description":
-              "VTEX sales channel. This will be the default sales channel your site. For more info, read here: https://help.vtex.com/tutorial/how-trade-policies-work--6Xef8PZiFm40kg2STrMkMV",
-          },
-          "locale": {
-            "type": "string",
-            "title": "Locale",
-            "description": "Locale used for VTEX Intelligent Search client.",
-          },
-        },
-        "required": [
-          "account",
-          "salesChannel",
-          "locale",
-        ],
-      },
-      "outputSchema": null,
-    },
     "./functions/scrapData.ts": {
       "inputSchema": {
         "title": "Scrap Data",
@@ -503,9 +470,9 @@ const manifest: DecoManifest = {
         "additionalProperties": true,
       },
     },
-    "./functions/vtexProductList.ts": {
+    "./functions/templateVtexProductList.ts": {
       "inputSchema": {
-        "title": "Vtex Product List",
+        "title": "Template Vtex Product List",
         "type": "object",
         "properties": {
           "query": {
