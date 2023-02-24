@@ -1,2 +1,2 @@
-export {default} from "$store/sections/Highlights.tsx";
-export type {Props} from "$store/sections/Highlights.tsx";
+export { default } from "$store/sections/Highlights.tsx";
+import type { Props } from "$store/sections/Highlights.tsx";
