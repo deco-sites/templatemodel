@@ -1,5 +1,2 @@
-import Features, { Props } from "$store/sections/Features.tsx";
-
-export default function (props: Props) {
-  return <Features {...props}></Features>;
-}
+export { default } from "$store/sections/Features.tsx";
+export type { Props } from "$store/sections/Features.tsx";
