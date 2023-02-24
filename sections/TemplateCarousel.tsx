@@ -1,4 +1,4 @@
-import Carousel, { Image } from "./Carousel.tsx";
+import Carousel, { Image } from "$store/sections/Carousel.tsx";
 import type { LoaderReturnType } from "$live/std/types.ts";
 import { scrapProps } from "../functions/scrapData.ts";
 

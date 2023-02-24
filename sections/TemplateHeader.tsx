@@ -1,9 +1,8 @@
-import Header from "./Header.tsx";
+import Header from "$store/sections/Header.tsx";
 import type { LoaderReturnType } from "$live/std/types.ts";
 import { scrapProps } from "../functions/scrapData.ts";
 import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
 import type { NavItem as Item } from "$store/components/header/NavItem.ts";
-import { isLightLuminance } from "../utils/color.ts";
 
 export interface Props {
   scrapData?: LoaderReturnType<scrapProps>;

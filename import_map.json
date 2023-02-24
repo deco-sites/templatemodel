@@ -1,6 +1,6 @@
 {
   "imports": {
-    "$store/": "./",
+    "$store/": "https://raw.githubusercontent.com/deco-sites/fashion/0be18cb75610434bd4ed95f5216080c414176af4/",
     "$live/": "https://deno.land/x/live@0.5.2/",
     "partytown/": "https://deno.land/x/partytown@0.1.3/",
     "inspect_vscode/": "https://deno.land/x/inspect_vscode@0.1.2/",

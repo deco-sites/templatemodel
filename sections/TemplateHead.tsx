@@ -1,4 +1,4 @@
-import HeadDeco from "./Head.tsx";
+import HeadDeco from "$store/sections/Head.tsx";
 import type { LoaderReturnType } from "$live/std/types.ts";
 import { scrapProps } from "../functions/scrapData.ts";
 
